@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"    
+      xmlns:f="http://java.sun.com/jsf/core"     
+      >   
+    <h:head>      
+        <title>Laba 4</title>   
+    </h:head>  
+    <h:body>     
+        <h2>Main task</h2>  
+        <h:dataTable value="#{mancomp.getEmployees()}" var="employee">    
+            <h:column>    
+                <f:facet name="header">Name</f:facet>       
+                <h:outputText value="#{employee.getName()}"/>
+            </h:column>   
+            <h:column>   
+                <f:facet name="header">Department</f:facet>    
+                <h:outputText value="#{employee.getDepartment()}"/>     
+            </h:column>   
+            <h:column>       
+                <f:facet name="header">Address</f:facet>     
+                <h:outputText value="#{employee.getAddress()}"/>     
+            </h:column>      
+            <h:column>       
+                <f:facet name="header">Wage</f:facet>   
+                <h:outputText value="#{employee.getWage()}"/>       
+            </h:column>  
+            <h:column>    
+                <f:facet name="header">Action</f:facet>    
+                <h:form>
+                    <h:commandButton value="Delete" action="#{mancomp.deleteEmployee(employee)}"/>
+                </h:form>
+            </h:column>  
+        </h:dataTable>
+        <h:form>
+            <h:inputText value="#{mancomp.name}">
+                
+            </h:inputText>
+            <h:inputText value="#{mancomp.department}">
+                
+            </h:inputText>
+            <h:inputText value="#{mancomp.address}">
+                
+            </h:inputText>
+            <h:inputText value="#{mancomp.wage}">
+                
+            </h:inputText>
+            <h:commandButton value="Add" action="#{mancomp.addEmployee()}"></h:commandButton>
+        </h:form>
+        <hr/>
+        <h3>Search</h3>
+        <h:form>
+            <h:inputText value="#{mancomp.searchName}"></h:inputText>
+            <h:commandButton value="Search" action="#{mancomp.setSearchedEmployees()}"></h:commandButton>
+        </h:form>
+        <br/>
+        <h:dataTable value="#{mancomp.getSearchedEmployees()}" var="employee">    
+            <h:column>    
+                <f:facet name="header">Name</f:facet>       
+                <h:outputText value="#{employee.getName()}"/>
+            </h:column>   
+            <h:column>   
+                <f:facet name="header">Department</f:facet>    
+                <h:outputText value="#{employee.getDepartment()}"/>     
+            </h:column>   
+            <h:column>       
+                <f:facet name="header">Address</f:facet>     
+                <h:outputText value="#{employee.getAddress()}"/>     
+            </h:column>      
+            <h:column>       
+                <f:facet name="header">Wage</f:facet>   
+                <h:outputText value="#{employee.getWage()}"/>       
+            </h:column>   
+        </h:dataTable>
+    </h:body>
+</html>
