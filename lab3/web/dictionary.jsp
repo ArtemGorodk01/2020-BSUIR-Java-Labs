@@ -6,12 +6,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
     </head> 
     <body bgcolor="#aaccff"> 
-        <Font color="green" size="10"> Vocabulary </Font>
+        <Font color="green" size="10"> Dictionary </Font>
         <br/> 
         <br/> 
-        <form name="frm" method="Get" action="MyServlet">
+        <form name="frm" method="Get" action="MyServlet" accept-charset="UTF-8">
             <Font color="blue" size="6"> Введите слово:</Font>
-            <Input type="Text" name="txt" value="${txt}"/> 
+            <Input type="Text" name="word" accept-charset="UTF-8" value="${txt}"/> 
             <br/> 
             <br/> 
             <Font color="blue" size="6">Перевод </Font>
