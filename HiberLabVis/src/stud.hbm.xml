@@ -1,0 +1,10 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="HiberLabVis">  
+    <class name="perst.Stud" table="STUD">        
+        <id name="Fio" column="FIO" type="string" length="100"/>       
+        <property name="Age" column="AGE"/>     
+    </class> 
+</hibernate-mapping>
